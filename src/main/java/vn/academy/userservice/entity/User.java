@@ -1,22 +1,32 @@
 package vn.academy.userservice.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 import java.util.UUID;
 
 @Entity
 @Setter
 @Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class User {
     @Id
     @GeneratedValue(generator = "UUID")
-    private UUID id;
+    UUID id;
 
-    private String username;
+    @Column(unique = true)
+    String username;
 
-    private String password;
+    String password;
+
+    String name;
+
+    @Column(unique = true)
+    String email;
 }

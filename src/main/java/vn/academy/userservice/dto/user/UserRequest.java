@@ -1,5 +1,6 @@
 package vn.academy.userservice.dto.user;
 
+import jakarta.persistence.Column;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -17,4 +18,8 @@ public class UserRequest {
     String username;
 
     String password;
+
+    String name;
+
+    String email;
 }
